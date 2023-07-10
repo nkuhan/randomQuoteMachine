@@ -1,0 +1,60 @@
+<html>
+<head>
+	<script type="text/javascript">
+
+		const QBank = [
+              {
+              	quote: "when the power author is supermercy",
+              	author: "Jimi hendrix"
+              },
+              {
+              	quote: "The man is supermercy machine ",
+              	author: "Brown hendrix"
+              },
+              {
+              	quote: "who is the man let to do somthing",
+              	author: "Helebulla"
+              }
+			]
+
+		window.onload = init;
+		function init(){
+			generateQuote();
+			
+		}
+		function generateQuote() {
+           console.log("generateQuote");
+           let i = Math.floor(Math.random()*QBank.length);
+           document.getElementById("text").innerText = QBank[i].quote;
+			document.getElementById("author").innerText = QBank[i].author;
+		}
+
+	</script>
+	<style>
+		* {
+			font-size: 2rem;
+		}
+
+		#quote-box {
+  border-radius:3px;
+  position:relative;
+  margin:8% auto auto auto;
+  width:500px;
+  padding:40px 50px;
+  display:table;
+  background-color:#fff;
+}
+	</style>
+
+</head>
+<body>
+	<wrapper id="quote-box">
+		
+		<p id="text"></p>
+		<p id="author"></p>
+		<button href="#" id="new-quote" onClick="generateQuote();">New Quote</button>
+		<a href="https://twitter.com/intent/tweet" id="tweet-quote" target="_blank">Tweet</a>
+	</wrapper>
+	<script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+</body>
+</html>
